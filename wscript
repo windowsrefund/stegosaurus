@@ -37,9 +37,9 @@ def configure(conf):
     else:
         conf.env.append_unique('CXXFLAGS', ['-O2','-funroll-loops','-std=c++0x'])
 
-	if sys.maxint >= 9223372036854775807:
-		print "detected 64 bit architecture, enabling -fPIC"
-        	conf.env.append_unique('CXXFLAGS', ['-fPIC','-fpermissive','-finline-functions'])
+    if sys.maxint >= 9223372036854775807:
+        print("detected 64 bit architecture, enabling -fPIC")
+        conf.env.append_unique('CXXFLAGS', ['-fPIC','-fpermissive','-finline-functions'])
 
     autowaf.display_msg(conf, "LV2 bundle directory", conf.env.LV2DIR)
     print('')
